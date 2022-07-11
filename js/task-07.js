@@ -1,16 +1,18 @@
-const inputChange = document.querySelector("input");
-const spanEl = document.querySelector("span");
+const refs = {
+  inputChange: document.querySelector("input"),
+  spanEl: document.querySelector("span"),
+};
 
-inputChange.addEventListener("input", onTextSizeChangeBtn);
+refs.inputChange.addEventListener("input", onTextSizeChangeBtn);
 
 function onTextSizeChangeBtn(event) {
-  if (event.currentTarget.value !== inputChange.id) {
-    return (spanEl.style.fontSize = `${event.currentTarget.value}px`);
+  if (event.currentTarget.value !== refs.inputChange.id) {
+    return (refs.spanEl.style.fontSize = `${event.currentTarget.value}px`);
   }
 }
 
 // function onTextSizeChangeBtn(event) {
-//   event.currentTarget.value !== inputChange.id
-//     ? (spanEl.style.fontSize = `${event.currentTarget.value}px`)
-//     : spanEl.style.fontSize;
+//   event.currentTarget.value !== refs.inputChange.id
+//     ? (refs.spanEl.style.fontSize = `${event.currentTarget.value}px`)
+//     : refs.spanEl.style.fontSize;
 // }
