@@ -4,17 +4,15 @@ formEls.addEventListener("submit", onFillFildesInputRequired);
 
 function onFillFildesInputRequired(event) {
   event.preventDefault();
-  const formData = new FormData(event.currentTarget);
-  const {
-    elements: { email, password },
-  } = event.currentTarget;
-  if (email.value === "" || password.value === "") {
-    return alert("All fields must be filled out");
-  } else {
-    formData.forEach((value, name) => {
-      console.log(name);
-      console.log(value);
-      event.currentTarget.reset();
-    });
-  }
+  const email = event.currentTarget.email.value;
+  const password = event.currentTarget.password.value;
+
+  email === "" || password === ""
+    ? alert("All fields must be filled out")
+    : console.log({
+        email,
+        password,
+      });
+
+  event.currentTarget.reset();
 }
